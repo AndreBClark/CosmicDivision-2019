@@ -1,22 +1,26 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import styled from 'styled-components'
 
-import gatsbyLogo from '../images/gatsby-icon.png'
+import Logo from '../images/logo.svg'
+
+const HeaderWrapper = styled.div`
+  background: #534763;
+  margin-bottom: 1.45rem;
+  img {
+    margin-bottom: 0;
+  }
+`
+const HeaderContainer = styled.div`
+max-width: 960px;
+margin: 0 auto;
+padding: 1.45rem;
+`
+
 
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
+  <HeaderWrapper> 
+    <HeaderContainer>
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
@@ -24,18 +28,18 @@ const Header = ({ siteTitle }) => (
             color: 'white',
             textDecoration: 'none',
           }}
-        >
+          >
           <img
             style={{
               width: '100px',
             }}
-            src={gatsbyLogo}
-            alt="Gatsby Logo"
-          />
+            src={Logo}
+            alt="Logo"
+            />
         </Link>
       </h1>
-    </div>
-  </div>
+    </HeaderContainer>
+</HeaderWrapper>
 )
 
 export default Header

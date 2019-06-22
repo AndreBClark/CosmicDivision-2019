@@ -5,7 +5,7 @@ import Listing from '../components/listing'
 
 const IndexPage = () => (
   <Layout>
-    <Listing />
+    <Listing/>
   </Layout>
 )
 
