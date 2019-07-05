@@ -6,3 +6,4 @@ package-lock.json
 # Build directory
 /public
 .DS_Store
+package-lock.json
