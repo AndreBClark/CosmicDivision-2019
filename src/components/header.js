@@ -2,23 +2,23 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-import Logo from '../images/logo.svg'
+import logo from '../images/logo.svg'
 
 const HeaderWrapper = styled.div`
-  background: #534763;
+  background: #524763;
   img {
     margin-bottom: 0;
   }
 `
+
 const HeaderContainer = styled.div`
-max-width: 960px;
-margin: 0 auto;
-padding: 1.45rem;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0.3rem;
 `
 
-
 const Header = ({ siteTitle }) => (
-  <HeaderWrapper> 
+  <HeaderWrapper>
     <HeaderContainer>
       <h1 style={{ margin: 0 }}>
         <Link
@@ -27,18 +27,18 @@ const Header = ({ siteTitle }) => (
             color: 'white',
             textDecoration: 'none',
           }}
-          >
+        >
           <img
             style={{
               width: '100px',
             }}
-            src={Logo}
-            alt="Logo"
-            />
+            src={logo}
+            alt="Level Up Tutorials Logo"
+          />
         </Link>
       </h1>
     </HeaderContainer>
-</HeaderWrapper>
+  </HeaderWrapper>
 )
 
 export default Header

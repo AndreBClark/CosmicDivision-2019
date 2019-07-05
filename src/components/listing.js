@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
-
-
+import { Link, StaticQuery, graphql } from 'gatsby'
 
 const LISTING_QUERY = graphql`
   query BlogPostListing {
@@ -24,9 +22,8 @@ const LISTING_QUERY = graphql`
   }
 `
 
-
 const Post = styled.article`
-  box-shadow: 0px 3px 10px rgba(25,17,34, 0.05);
+  box-shadow: 0px 3px 10px rgba(25, 17, 34, 0.05);
   padding: 1rem;
   border-radius: 4px;
   margin-bottom: 1rem;
@@ -34,11 +31,11 @@ const Post = styled.article`
     color: #000;
     text-decoration: none;
   }
-  p {
-    font-size: .8rem;
-  }
   h2 {
     margin-bottom: 0;
+  }
+  p {
+    font-size: 0.8rem;
   }
   .read-more {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -47,8 +44,6 @@ const Post = styled.article`
     color: #524763;
   }
 `
-
-
 
 const Listing = () => (
   <StaticQuery

@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
-import { Spring } from 'react-spring/renderprops'
+import { Spring } from 'react-spring'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
@@ -77,6 +77,7 @@ const Layout = ({ children, location }) => (
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
+
 Layout.defaultProps = {
   location: {},
 }
