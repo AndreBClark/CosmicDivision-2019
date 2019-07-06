@@ -1,7 +1,7 @@
 backend:
   name: github
   branch: master
-  repo: stolinski/progatsby2
+  repo: AndreBClark/Level-Up-tutorials-gatsbypro
 
 media_folder: static/img
 public_folder: /img
