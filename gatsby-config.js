@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Level Up Blog',
     description: 'A new blog!',
-    siteUrl: 'https://sharp-jang-e7f473.netlify.com',
+    siteUrl: 'https://gatsbyblogfromtutorial.netlify.com/',
   },
   plugins: [
     'gatsby-plugin-sitemap',
