@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Level Up Blog',
-    description: 'A new blog!',
+    title: 'Cosmic Division',
+    description: 'Andre Clark Portfolio site',
     siteUrl: 'https://gatsbyblogfromtutorial.netlify.com/',
   },
   plugins: [
@@ -13,8 +13,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Level Up Blog',
-        short_name: 'LUTBlog',
+        name: 'Cosmic Division',
+        short_name: 'Cosmic Div',
         start_url: '/',
         background_color: '#524763',
         theme_color: '#524763',
