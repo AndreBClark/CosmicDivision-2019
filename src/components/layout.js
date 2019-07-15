@@ -8,7 +8,9 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
 import Archive from './archive'
-import './layout.css'
+import '../theme/theme.scss'
+
+
 
 const MainLayout = styled.main`
   max-width: 90%;
@@ -17,6 +19,12 @@ const MainLayout = styled.main`
   grid-template-columns: 3fr 1fr;
   grid-gap: 40px;
 `
+
+const Body = styled.html`
+  background: var(--parent-bg);
+  color: var(--color);
+}`
+
 
 const Layout = ({ children, location }) => (
   <StaticQuery
@@ -51,27 +59,25 @@ const Layout = ({ children, location }) => (
         >
           <html lang="en" />
         </Helmet>
+
         <Header siteTitle={data.site.siteMetadata.title} />
         <Spring
           from={{ height: location.pathname === '/' ? 100 : 200 }}
           to={{ height: location.pathname === '/' ? 200 : 100 }}
-        >
+          >
           {styles => (
             <div style={{ overflow: 'hidden', ...styles }}>
               <Img fluid={data.file.childImageSharp.fluid} />
             </div>
           )}
         </Spring>
-        {/* {location.pathname === '/' && (
-          
-        )} */}
         <MainLayout>
           <div>{children}</div>
           <Archive />
         </MainLayout>
-      </>
+        </>
     )}
-  />
+    />
 )
 
 Layout.propTypes = {

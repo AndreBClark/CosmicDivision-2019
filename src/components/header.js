@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import logo from '../images/logo.svg'
 
 const HeaderWrapper = styled.div`
-  background: #524763;
+  background: #;
   img {
     margin-bottom: 0;
   }
@@ -13,7 +13,7 @@ const HeaderWrapper = styled.div`
 
 const HeaderContainer = styled.div`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1700px;
   padding: 0.3rem;
 `
 

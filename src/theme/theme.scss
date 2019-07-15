@@ -1,0 +1,11 @@
+@import './layout.css';
+:root {
+    --parent-bg: #121212;
+    --color: #26FFBA;
+    --bg: #282828;
+}
+
+body {
+    background: var(--parent-bg);
+    color: var(--color);
+}
