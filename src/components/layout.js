@@ -20,10 +20,7 @@ const MainLayout = styled.main`
   grid-gap: 40px;
 `
 
-const Body = styled.html`
-  background: var(--parent-bg);
-  color: var(--color);
-}`
+
 
 
 const Layout = ({ children, location }) => (
