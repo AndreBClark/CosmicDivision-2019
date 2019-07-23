@@ -3,13 +3,12 @@ import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import { Spring } from 'react-spring'
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
 import Archive from './archive'
-import '../theme/theme.scss'
-
+import theme from '../../config/theme'
 
 
 const MainLayout = styled.main`
@@ -43,7 +42,7 @@ const Layout = ({ children, location }) => (
       }
     `}
     render={data => (
-      <>
+      <ThemeProvider>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -72,7 +71,7 @@ const Layout = ({ children, location }) => (
           <div>{children}</div>
           <Archive />
         </MainLayout>
-        </>
+        </ThemeProvider>
     )}
     />
 )
