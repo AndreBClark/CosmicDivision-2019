@@ -15,8 +15,8 @@ const colors = {
     middle: 'rgba(255,255,255, .1)',
     high: 'rgba(255,255,255,.2)',
   },
-  white: 'white'
-};
+  white: 'white',
+}
 
 const transitions = {
   normal: '0.5s',

@@ -4,10 +4,10 @@ import { StaticQuery, graphql, Link } from 'gatsby'
 
 const POST_ARCHIVE_QUERY = graphql`
   query BlogPostArchive {
-    allMarkdownRemark(limit: 5, sort: {
-    order: DESC,
-    fields: [frontmatter___date]
-  }) {
+    allMarkdownRemark(
+      limit: 5
+      sort: { order: DESC, fields: [frontmatter___date] }
+    ) {
       edges {
         node {
           frontmatter {
@@ -25,7 +25,8 @@ const ArchiveList = styled.ul`
   margin: 0;
   list-style: none;
   a {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     font-size: 0.8rem;
     text-decoration: underline;
   }
@@ -34,7 +35,7 @@ const ArchiveList = styled.ul`
 const Archive = () => (
   <StaticQuery
     query={POST_ARCHIVE_QUERY}
-    render={({allMarkdownRemark}) => (
+    render={({ allMarkdownRemark }) => (
       <>
         <aside>
           <h3>Archive</h3>

@@ -21,7 +21,6 @@ a {
   color: ${props => props.theme.colors.primary}
 }`
 
-
 const MainLayout = styled.main`
   max-width: 90%;
   margin: 1rem auto;
@@ -30,64 +29,63 @@ const MainLayout = styled.main`
   grid-gap: 40px;
 `
 const Link = styled.a`
-  color: ${props => props.theme.primaryLight}`
-
-
+  color: ${props => props.theme.primaryLight};
+`
 
 const Layout = ({ children, location }) => (
   <StaticQuery
-  query={graphql`
-  query SiteTitleQuery {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-    file(relativePath: { regex: "/russianrocket/" }) {
-      childImageSharp {
-        fluid(maxWidth: 1000) {
-          ...GatsbyImageSharpFluid_tracedSVG
+    query={graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+            description
+          }
+        }
+        file(relativePath: { regex: "/russianrocket/" }) {
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid_tracedSVG
+            }
+          }
         }
       }
-    }
-  }
-  `}
-  render={data => (
-    <ThemeProvider theme={theme}>
+    `}
+    render={data => (
+      <ThemeProvider theme={theme}>
         <>
-    <GlobalStyle />
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            {
-              name: 'description',
-              content: data.site.siteMetadata.description,
-            },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <Spring
-          from={{ height: location.pathname === '/' ? 100 : 200 }}
-          to={{ height: location.pathname === '/' ? 200 : 100 }}
+          <GlobalStyle />
+          <Helmet
+            title={data.site.siteMetadata.title}
+            meta={[
+              {
+                name: 'description',
+                content: data.site.siteMetadata.description,
+              },
+              { name: 'keywords', content: 'sample, something' },
+            ]}
           >
-          {styles => (
-            <div style={{ overflow: 'hidden', ...styles }}>
-              <Img fluid={data.file.childImageSharp.fluid} />
-            </div>
-          )}
-        </Spring>
-        <MainLayout>
-          <div>{children}</div>
-          <Archive />
-        </MainLayout>
+            <html lang="en" />
+          </Helmet>
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <Spring
+            from={{ height: location.pathname === '/' ? 100 : 200 }}
+            to={{ height: location.pathname === '/' ? 200 : 100 }}
+          >
+            {styles => (
+              <div style={{ overflow: 'hidden', ...styles }}>
+                <Img fluid={data.file.childImageSharp.fluid} />
+              </div>
+            )}
+          </Spring>
+          <MainLayout>
+            <div>{children}</div>
+            <Archive />
+          </MainLayout>
         </>
-        </ThemeProvider>
+      </ThemeProvider>
     )}
-    />
+  />
 )
 
 Layout.propTypes = {
