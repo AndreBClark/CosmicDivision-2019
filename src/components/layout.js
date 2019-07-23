@@ -15,6 +15,7 @@ body {
   background-color: ${props => props.theme.colors.bg};
   color: ${props => props.theme.colors.primary};
   margin: 0;
+  text-rendering: optimizeLegibility;
 }
 a {
   color: ${props => props.theme.colors.primary}
@@ -43,7 +44,7 @@ const Layout = ({ children, location }) => (
         description
       }
     }
-    file(relativePath: { regex: "/bg/" }) {
+    file(relativePath: { regex: "/russianrocket/" }) {
       childImageSharp {
         fluid(maxWidth: 1000) {
           ...GatsbyImageSharpFluid_tracedSVG
